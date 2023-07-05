@@ -204,12 +204,28 @@ function problemThree(){
 
     return results;
 }
-let italianFood = problemThree();
-console.log("Italian food from dishes that serves more than 5 ", italianFood);
+//let italianFood = problemThree();
+//console.log("Italian food from dishes that serves more than 5 ", italianFood);
 
 //4. Create a function that will return only dishes whose id number matches their serving count.
 //Filter
+function problemFour(){
 
+    let results;
+    results = dishes.filter(function(el){
+        console.log(`${el.name} in Dishes: `, "id:", el.id, "servings:", el.servings)
+        if (el.id === el.servings){
+            return true
+        } 
+        else {
+            return false
+        }
+    })
+
+    return results;
+}
+let idServFood = problemFour();
+console.log("Food whose id number and servings are equal from dishes ", idServFood);
 
 
 //5. Create a function that will return only dishes whose serving count is even.
