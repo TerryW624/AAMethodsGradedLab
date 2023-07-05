@@ -254,15 +254,31 @@ function problemFive(){
 
     return results;
 }
-let foodWithEvenServings = problemFive();
-console.log("Even servings of food from dishes ", foodWithEvenServings);
+//let foodWithEvenServings = problemFive();
+//console.log("Even servings of food from dishes ", foodWithEvenServings);
 
 
 //6. Create a function that will return dishes whose ingredients array INCLUDES "chickpea".
 //Hint: You do not want to check the array's indexes to find out what the array INCLUDES.
 //Double Hint: Research 'javascript does array include item'
 //Filter
+function problemSix(){
 
+    let results;
+    results = dishes.filter(function(el){
+        console.log(`${el.name} in Dishes: `, el.ingredients)
+        if (el.ingredients.includes("chickpea") === true){
+            return true
+        } 
+        else {
+            return false
+        }
+    })
+
+    return results;
+}
+let chickpeaFood = problemSix();
+console.log("Food with chickpea from dishes ", chickpeaFood);
 
 
 //7. Create a function that will prompt the user to type the name of one ingredient. Then use a filter to find all the dishes whose ingredients array INCLUDES that ingredient. Return the new array.
