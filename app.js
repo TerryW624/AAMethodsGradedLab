@@ -359,12 +359,39 @@ function problemNine(){
     return results;
 }
 
-let cuisineAndName = problemNine();
-console.log("Dishes come from these cuisine types:", cuisineAndName);
+//let cuisineAndName = problemNine();
+//console.log("Dishes come from these cuisine types:", cuisineAndName);
 
 
 //10. Create a function that will use advanced array methods on the 'dishes' array and return the result ["Vegetarian Lasagna", "Vegetarian Falafel", "Vegetarian Chili"]
+function problemThree(){
 
+    let results;
+    results = dishes.filter(function(el){
+        console.log(`${el.name} in Dishes: `, el.cuisine)
+        if (el.cuisine === "Vegetarian"){
+            return true
+        } 
+        else {
+            return false
+        }
+    })
+
+    return results;
+}
+let vegetarianFoods = problemThree();
+function nameAndCuisine(){
+    let results;
+    results = vegetarianFoods.map(function(el){
+        console.log(`${el.name} in Dishes: `, el.cuisine)
+        return `${el.cuisine} ${el.name}`
+    })
+
+    return results;
+}
+
+mappedVegtarianFoods = nameAndCuisine()
+console.log("Vegetarian Foods ", mappedVegtarianFoods);
 
 
 
