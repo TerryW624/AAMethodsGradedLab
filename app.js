@@ -342,13 +342,25 @@ function problemEightA(){
     return results;
 }
 
-let cuisineTypes = problemEightA();
-console.log("Dishes come from these cuisine types:", cuisineTypes);
+//let cuisineTypes = problemEightA();
+//console.log("Dishes come from these cuisine types:", cuisineTypes);
 
 
 //9. Create a function that will return an array of strings, with the cuisine type appended to the start of the dish's name. Ie, ["Italian Pizza", "Italian Spaghetti", ...]
 //Map 
+function problemNine(){
 
+    let results;
+    results = dishes.map(function(el){
+        console.log(`${el.name} in Dishes: `, el.cuisine)
+        return `${el.cuisine} ${el.name}`
+    })
+
+    return results;
+}
+
+let cuisineAndName = problemNine();
+console.log("Dishes come from these cuisine types:", cuisineAndName);
 
 
 //10. Create a function that will use advanced array methods on the 'dishes' array and return the result ["Vegetarian Lasagna", "Vegetarian Falafel", "Vegetarian Chili"]
