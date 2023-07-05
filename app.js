@@ -277,13 +277,56 @@ function problemSix(){
 
     return results;
 }
-let chickpeaFood = problemSix();
-console.log("Food with chickpea from dishes ", chickpeaFood);
+//let chickpeaFood = problemSix();
+//console.log("Food with chickpea from dishes ", chickpeaFood);
 
 
 //7. Create a function that will prompt the user to type the name of one ingredient. Then use a filter to find all the dishes whose ingredients array INCLUDES that ingredient. Return the new array.
 //Filter
+function promptUserIngredient(){
+    input = prompt("What ingredient would you like to search for?")
+    return input
+}
 
+// function checkUserIngredient(input){
+//     let results;
+//     results = dishes.filter(function(el){
+//         console.log(`${el.name} in Dishes: `, el.ingredients)
+//         if (el.ingredients.includes(input) === true){
+//             return true
+//         } 
+//         else {
+//             return false
+//         }
+//     })
+
+//     if (results === Array(0)){
+//         alert("Please try again!")
+//         checkUserIngredient(input)
+//     }
+//     else {
+//         alert("Matches found!")
+//         return
+//     }
+// }
+
+function problemSeven(){
+    let userInput = promptUserIngredient()
+    let results;
+    results = dishes.filter(function(el){
+        console.log(`${el.name} in Dishes: `, el.ingredients)
+        if (el.ingredients.includes(userInput) === true){
+            return true
+        } 
+        else {
+            return false
+        }
+    })
+
+    return results;
+}
+let userIngredientFood = problemSeven();
+console.log("Food with user's choice ingredient from dishes ", userIngredientFood);
 
 
 //8a. Create a function that will return an array of the string cuisine types. Ie, ["Italian", "Italian", "Mexican", ...]
