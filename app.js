@@ -224,13 +224,38 @@ function problemFour(){
 
     return results;
 }
-let idServFood = problemFour();
-console.log("Food whose id number and servings are equal from dishes ", idServFood);
+//let idServFood = problemFour();
+//console.log("Food whose id number and servings are equal from dishes ", idServFood);
 
 
 //5. Create a function that will return only dishes whose serving count is even.
 //Filter
+function evenServingsCheck(servings){
+    if (servings % 2 === 0){
+        return true
+    }
+    else {
+        return false
+    }
+}
 
+function problemFive(){
+
+    let results;
+    results = dishes.filter(function(el){
+        console.log(`${el.name} in Dishes: `, el.servings)
+        if (evenServingsCheck(el.servings) === true){
+            return true
+        } 
+        else {
+            return false
+        }
+    })
+
+    return results;
+}
+let foodWithEvenServings = problemFive();
+console.log("Even servings of food from dishes ", foodWithEvenServings);
 
 
 //6. Create a function that will return dishes whose ingredients array INCLUDES "chickpea".
