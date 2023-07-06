@@ -322,7 +322,21 @@ function problemEightA(){
 }
 
 let cuisineTypes = problemEightA();
-console.log("Dishes come from these cuisine types:", cuisineTypes);
+function problemEightB(){
+    let results;
+    results = cuisineTypes.filter(function(el, index){
+        if (cuisineTypes.indexOf(el) === index){
+            return true
+        }
+        else {
+            return false
+        }
+    })
+    return results;
+}
+
+filterDuplicates = problemEightB();
+console.log("Dishes come from these cuisine types:", filterDuplicates);
 
 
 //9. Create a function that will return an array of strings, with the cuisine type appended to the start of the dish's name. Ie, ["Italian Pizza", "Italian Spaghetti", ...]
@@ -382,6 +396,23 @@ console.log("Vegetarian Foods ", mappedVegtarianFoods);
 //11. Create a function that will return dishes whose ingredients array INCLUDES "tomato" OR "cheese".
 //Hint: You do not want to check the array's indexes to find out what the array INCLUDES.
 //Filter
+function problemSix(){
+
+    let results;
+    results = dishes.filter(function(el){
+        console.log(`${el.name} in Dishes: `, el.ingredients)
+        if (el.ingredients.includes("tomato") === true || el.ingredients.includes("cheese") === true){
+            return true
+        } 
+        else {
+            return false
+        }
+    })
+
+    return results;
+}
+let tomatoOrCheese = problemSix();
+console.log("Food with tomato or chees from dishes ", tomatoOrCheese);
 
 //12. Create a function that will return the total serving count of all dishes.
 //Must use Reduce, not a loop.
